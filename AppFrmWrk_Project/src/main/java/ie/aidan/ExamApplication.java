@@ -11,9 +11,9 @@ public class ExamApplication {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"beans.xml");
-		ClassRepository todoRepository = ctx.getBean(ClassRepository.class); //note its the interface type (TodoRepository) - generic
+		ClassRepository classRepository = ctx.getBean(ClassRepository.class); //note its the interface type (classRepository) - generic
 
-		List<Class> all = todoRepository.getAll();
+		List<Class> all = classRepository.getAll();
 		System.out.println(all);
 	}
 

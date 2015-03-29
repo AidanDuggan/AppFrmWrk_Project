@@ -12,7 +12,7 @@
 		<property name="password" value="dEnMUnLp3WQxXzpTV7HmBJ_jypi-xbd0"></property>
 	</bean>
 
-	<bean id="todoRepository" class="ie.aidan.dao.ClassRepositoryJdbc">
+	<bean id="classRepository" class="ie.aidan.dao.ClassRepositoryJdbc">
 		<constructor-arg ref="dataSource" />
 	</bean>
 </beans>
