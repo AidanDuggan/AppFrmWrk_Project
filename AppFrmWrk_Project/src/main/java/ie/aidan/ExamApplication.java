@@ -9,12 +9,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ExamApplication {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"beans.xml");
-		ClassRepository classRepository = ctx.getBean(ClassRepository.class); //note its the interface type (classRepository) - generic
-
-		List<Class> all = classRepository.getAll();
-		System.out.println(all);
+		
+//		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
+//				"beans.xml");
+//		ClassRepository classRepository = ctx.getBean(ClassRepository.class); //note its the interface type (classRepository) - generic
+//
+//		List<Class> all = classRepository.getAll();
+//		System.out.println(all);
 	}
 
 }

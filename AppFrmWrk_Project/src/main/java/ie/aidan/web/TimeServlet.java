@@ -21,11 +21,10 @@ public class TimeServlet extends HttpServlet {
 
 	private ClassRepository classRepository;
 
-	@Override
+	/*@Override
 	public void init() throws ServletException {
 		ServletContext servletContext = getServletContext();
-		WebApplicationContext ctx = WebApplicationContextUtils
-				.getWebApplicationContext(servletContext);
+		WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
 		classRepository = ctx.getBean(ClassRepository.class);
 	}
 
@@ -41,5 +40,5 @@ public class TimeServlet extends HttpServlet {
 		List<Class> all = classRepository.getAll();
 		System.out.println(all);
 
-	}
+	}*/
 }
