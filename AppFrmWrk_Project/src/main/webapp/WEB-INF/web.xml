@@ -20,25 +20,39 @@
 
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/class/*</url-pattern>
+		<url-pattern>/classroom/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/student/*</url-pattern>
 	</servlet-mapping>
 
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/question/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Configure filter to convert hidden parameters into proper request -->
 	<filter>
 		<filter-name>HiddenHttpMethodFilter</filter-name>
 		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
 	</filter>
+	<!--  provide mapping for filter - dispatcher servlet -->
 	<filter-mapping>
 		<filter-name>HiddenHttpMethodFilter</filter-name>
 		<servlet-name>dispatcher</servlet-name>
 	</filter-mapping>
 
+	<!--  Example of using a servlet -->
 	<servlet>
-		<servlet-name>timeServlet</servlet-name>
-		<servlet-class>ie.aidan.web.TimeServlet</servlet-class>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>ie.aidan.web.TestServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>timeServlet</servlet-name>
-		<url-pattern>/time</url-pattern>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/testservlet</url-pattern>
 	</servlet-mapping>
+	
 </web-app>

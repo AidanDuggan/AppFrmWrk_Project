@@ -16,7 +16,7 @@
 
 	<context:component-scan base-package="ie.aidan.dao"/>
 
-	<!--  <bean id="classRepository" class="ie.aidan.dao.ClassRepositoryJdbc">
+	<!--  <bean id="classRoomRepository" class="ie.aidan.dao.ClassRoomRepositoryJdbc">
 		<constructor-arg ref="dataSource" />
 	</bean>-->
 </beans>

@@ -8,7 +8,9 @@ public class Student {
 	private String lastname;
 	private Date  dob;
 	private String password;
-	private int class_id;
+	private int classroom_id;
+	private boolean isselected;
+	
 	public int getStudent_id() {
 		return student_id;
 	}
@@ -39,17 +41,24 @@ public class Student {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getClass_id() {
-		return class_id;
+	public int getClassRoom_id() {
+		return classroom_id;
 	}
-	public void setClass_id(int class_id) {
-		this.class_id = class_id;
+	public void setClassRoom_id(int classroom_id) {
+		this.classroom_id = classroom_id;
+	}
+
+	public boolean isIsselected() {
+		return isselected;
+	}
+	public void setIsselected(boolean isselected) {
+		this.isselected = isselected;
 	}
 	@Override
 	public String toString() {
 		return "Student [student_id=" + student_id + ", firstname=" + firstname
 				+ ", lastname=" + lastname + ", dob=" + dob + ", password="
-				+ password + ", class_id=" + class_id + "]";
+				+ password + ", classroom_id=" + classroom_id + "]";
 	}
 	
 	
