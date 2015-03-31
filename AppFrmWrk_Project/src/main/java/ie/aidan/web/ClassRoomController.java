@@ -66,6 +66,23 @@ public class ClassRoomController {
 		return "redirect:selectedStudents"; // For some reason the browser does not refresh automatically !!
 		//return "redirect:classrooms";
 	}
+	
+	@RequestMapping(value = "ClassRoomPage", method = RequestMethod.GET)
+	 public String ClassRoomPage() {
+    
+		 return "redirect:classrooms";
+	 }
+	 @RequestMapping(value = "StudentPage", method = RequestMethod.GET)
+	 public String StudentPage() {
+    
+		 return "redirect:selectedStudents";
+	 }
+	 @RequestMapping(value = "QuestionPage", method = RequestMethod.GET)
+	 public String QuestionPage() {
+    
+		 return "redirect:allQuestions";
+	 }	 
+	 
 /*
 	@RequestMapping(value = "{classRoom_id}, {teacher_id}", method = RequestMethod.PUT)
 	public String updateTeacher(@PathVariable Integer classRoom_id, @PathVariable Integer teacher_id) {

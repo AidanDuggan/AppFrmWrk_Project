@@ -8,7 +8,10 @@
 <title>Exam Questions:</title>
 </head>
 <body>
-<h1>Exam Questions:</h1>
+<form method="GET" action="ClassRoomPage">
+	<input name="create" type="submit" value="Back">
+</form>
+<h1>Insert New Exam Questions:</h1>
 
 	<form method="post" action="InsertQuestion">
 		Question Text:<input name="questiontextin" type="text" value=""> <br>
@@ -22,12 +25,14 @@
 		<input name="create1"type="submit" value="Insert">
 	</form>
 	<br><br>
+<h1>Current Questions:</h1>
+
 	<c:forEach items="${allQuestions}" var="question" varStatus="row">
 		<form method="post" action="${question.question_id}">
 			<input name="_method" type="hidden" value="delete"> 
 			Question:${row.index+1}<br>Question: ${question.questiontext}
-			<br>Answer 1:${question.questiontext}<br>Answer 2:${question.answer2}
-			<br>Answer 3:${question.answer1}<br>Answer 4:${question.answer4}
+			<br>Answer 1:${question.answer1}<br>Answer 2:${question.answer2}
+			<br>Answer 3:${question.answer3}<br>Answer 4:${question.answer4}
 			<br>Correct Answer:${question.correctanswer}<br>Classroom ID:${question.classroom_id}
 			<br><input name="delete" type="submit" value="Delete Q${row.index+1}"> 
 		</form>

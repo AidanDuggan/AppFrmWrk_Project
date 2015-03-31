@@ -18,9 +18,10 @@
 	</bean>
 
 	<!-- Configuration Manager to decide output media type -->
-	<bean id="cnManager"
-		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean" />
+	<bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean" />
 
+	<!--  rendering output to various format eg pdf -->
+	<!-- I have an output to Json configured - not really useful right now but maybe futre use -->
 	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="contentNegotiationManager" ref="cnManager" />

@@ -1,24 +1,34 @@
 package ie.aidan.web;
 
+import java.util.List;
+
 import ie.aidan.domain.Question;
 import ie.aidan.dao.QuestionRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class QuestionController {
 
-	@Autowired
+	
 	private QuestionRepository repo;
+	
+	@Autowired   // added constructor to inject repository
+	public QuestionController(QuestionRepository repo2) {
+		repo = repo2;
+	}
 
 	@RequestMapping("allQuestions")
-	public String getAllquestionItems(Model model) {
+	public String getAllQuestions(Model model) {
 		model.addAttribute("allQuestions", repo.getAllQuestions());
 		return "question";
 	}
@@ -26,7 +36,7 @@ public class QuestionController {
 	@RequestMapping("selectedQuestions")
 	public String getSelectedQuestions(Model model) {
 		model.addAttribute("selectedQuestions", repo.getSelectedQuestions());
-		return "question";
+		return "exam";
 	}
 	
 	@RequestMapping(value = "InsertQuestion", method = RequestMethod.POST)
@@ -61,4 +71,11 @@ public class QuestionController {
 		return "redirect:selectedQuestions";
 	}
 	
+	// REST end-points - output questions to json - not really used atm but maybe future use
+	// curl http://localhost:8080/AppFrmWrk_Project/question/allQuestions.json
+	@RequestMapping(value = { "allQuestions", "/" }, method = RequestMethod.GET, produces = "application/json")
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody List<Question> getAllQuestions() {
+		return repo.getAllQuestions();
+	}
 }

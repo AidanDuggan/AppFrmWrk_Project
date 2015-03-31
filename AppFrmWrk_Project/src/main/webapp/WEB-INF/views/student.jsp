@@ -5,10 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Select Student For Exam:</title>
+<title>Step 2) Select Student For Exam:</title>
 </head>
 <body>
-<h1>Select Student For Exam:</h1>
+<form method="GET" action="ClassRoomPage">
+	<input name="create" type="submit" value="Back">
+</form>
+<h1>Step 2) Select Student For Exam:</h1>
 <!--  Note: Lesson learned. Had to prefix the action with "Student" as we had duplicate actions with other
 	classes (eg classrooms) -->
 	<c:forEach items="${selectedStudents}" var="student" varStatus="row">
@@ -18,9 +21,10 @@
 			${student.student_id}. ${student.firstname} ${student.lastname}, Is Selected: ${student.isselected}
 		</form>
 	</c:forEach>
-  
-<form method="post" action="StartTest">
+ <!-- 
+<form method="GET" action="ExamPage">
 	<input name="create" type="submit" value="Start Test">
 </form>
+ --> 
 </body>
 </html>

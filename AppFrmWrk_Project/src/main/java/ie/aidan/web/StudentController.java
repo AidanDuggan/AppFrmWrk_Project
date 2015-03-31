@@ -36,10 +36,14 @@ public class StudentController {
 		Student.setIsselected(true);
 		repo.select(Student);
 		//repo.delete(student_id);
-		return "redirect:selectedStudents";
+		return "redirect:selectedQuestions";
 	}
 	
-
+	 @RequestMapping(value = "ExamPage", method = RequestMethod.GET)
+	 public String ExamPage() {
+     
+		 return "redirect:selectedQuestions";
+	 }
 /*	@RequestMapping(value = "{student_isselected}", method = RequestMethod.PUT)
 	public String updateSelected( @PathVariable boolean isselected) {
 		Student Student = repo.findByStudentId(1);

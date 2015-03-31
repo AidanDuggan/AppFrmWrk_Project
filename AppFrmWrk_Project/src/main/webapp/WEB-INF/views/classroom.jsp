@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Select Class For Exam:</title>
+<title>Step 1) Select Class For Exam:</title>
 </head>
 <body>
-<h1>Select Class For Exam:</h1>
+<h1>Step 1) Select Class For Exam:</h1>
 <!-- 
 <form method="post" action="../classroom/">
 	<input name="text" type="text" value=""> <input name="create"
@@ -39,6 +39,10 @@
 		</form>
 	</c:forEach>
 
+	<br> or <br>
+<form method="GET" action="QuestionPage">
+	<input name="create" type="submit" value="Enter/View All Questions">
+</form>
 	<!--
 	<c:forEach items="${classrooms}" var="classroom" varStatus="row">
 	 ${row.index}. ${classroom.class_name} <br />

@@ -44,7 +44,7 @@
 		<servlet-name>dispatcher</servlet-name>
 	</filter-mapping>
 
-	<!--  Example of using a servlet -->
+	<!--  Example of using a servlet - not needed in application but maybe in future-->
 	<servlet>
 		<servlet-name>TestServlet</servlet-name>
 		<servlet-class>ie.aidan.web.TestServlet</servlet-class>
