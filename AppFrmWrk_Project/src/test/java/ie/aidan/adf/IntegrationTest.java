@@ -1,6 +1,7 @@
 package ie.aidan.adf;
 
-import ie.aidan.adf.service.ServiceImplementation;
+import ie.aidan.service.ServiceImplementation;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,7 @@ public class IntegrationTest {
 	ServiceImplementation tested;
 
 	@Test
+	@Transactional
 	public void testInsertQuestion() {
 		tested.insertQuestion("test question text", 1, "test answer", "test 2", "test 3", "test 4", 1);
 		boolean checkFromDB = tested.CheckIfQuestionExists("test question text");

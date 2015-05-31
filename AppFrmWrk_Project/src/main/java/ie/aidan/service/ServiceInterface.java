@@ -1,4 +1,4 @@
-package ie.aidan.adf.service;
+package ie.aidan.service;
 
 import ie.aidan.domain.Question;
 
