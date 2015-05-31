@@ -29,7 +29,7 @@ public class StudentController {
 	}
 	
 	// Note: At the moment I have to use POST
-	@RequestMapping(value = "Student{student_id}", method = RequestMethod.POST)
+	@RequestMapping(value = "SelectStudent{student_id}", method = RequestMethod.POST)
 	public String selectStudent(@PathVariable Integer student_id) {
 		repo.setAllToUnSelected();
 		Student Student = repo.findByStudentId(student_id);

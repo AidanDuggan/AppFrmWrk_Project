@@ -15,7 +15,7 @@
 <!--  Note: Lesson learned. Had to prefix the action with "Student" as we had duplicate actions with other
 	classes (eg classrooms) -->
 	<c:forEach items="${selectedStudents}" var="student" varStatus="row">
-		<form method="post" action="Student${student.student_id}">
+		<form method="post" action="SelectStudent${student.student_id}">
 			<input name="_method" type="hidden" value="post"> 
 			<input name="select" type="submit" value="Select">  
 			${student.student_id}. ${student.firstname} ${student.lastname}, Is Selected: ${student.isselected}

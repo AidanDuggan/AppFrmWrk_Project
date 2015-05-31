@@ -40,7 +40,7 @@ public class QuestionController {
 	}
 	
 	@RequestMapping(value = "InsertQuestion", method = RequestMethod.POST)
-	public String create(@RequestParam String questiontextin,@RequestParam Integer classroom_id,
+	public String InsertQuestion(@RequestParam String questiontextin,@RequestParam Integer classroom_id,
 			@RequestParam String answer1,@RequestParam String answer2,@RequestParam String answer3,
 			@RequestParam String answer4, @RequestParam Integer correctanswer) {
 		Question question = new Question();
@@ -55,7 +55,8 @@ public class QuestionController {
 		return "redirect:allQuestions";
 	}
 	
-	@RequestMapping(value = "{question_id}", method = RequestMethod.DELETE)
+
+	@RequestMapping(value = "DeleteQuestion{question_id}", method = RequestMethod.DELETE)
 	public String delete(@PathVariable Integer question_id) {
 		repo.delete(question_id);
 		return "redirect:allQuestions";

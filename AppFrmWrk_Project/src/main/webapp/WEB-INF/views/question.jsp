@@ -28,7 +28,7 @@
 <h1>Current Questions:</h1>
 
 	<c:forEach items="${allQuestions}" var="question" varStatus="row">
-		<form method="post" action="${question.question_id}">
+		<form method="post" action="DeleteQuestion${question.question_id}">
 			<input name="_method" type="hidden" value="delete"> 
 			Question:${row.index+1}<br>Question: ${question.questiontext}
 			<br>Answer 1:${question.answer1}<br>Answer 2:${question.answer2}

@@ -32,7 +32,7 @@
 
 <!--  need to fix this as can only seem to use value="delete" at the moment - want to use "update" -->
 	<c:forEach items="${classrooms}" var="classroom" varStatus="row">
-		<form method="post" action="Class${classroom.classroom_id}">
+		<form method="post" action="SelectClass${classroom.classroom_id}">
 			<input name="_method" type="hidden" value="post"> 
 			<input name="select" type="submit" value="Select" >  
 			${classroom.classroom_id}. ${classroom.class_name}  ${classroom.isselected}

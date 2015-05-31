@@ -57,7 +57,7 @@ public class ClassRoomController {
 	*/
 
 
-	@RequestMapping(value = "Class{classroom_id}", method = RequestMethod.POST)
+	@RequestMapping(value = "SelectClass{classroom_id}", method = RequestMethod.POST)
 	public String selectClassRoom(@PathVariable Integer classroom_id) {
 		repo.setAllToUnSelected();
 		ClassRoom classRoom = repo.findByClassId(classroom_id);

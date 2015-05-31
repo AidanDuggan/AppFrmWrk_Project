@@ -66,6 +66,11 @@ public class QuestionControllerTest {
 				// TODO Auto-generated method stub
 
 			}
+
+			public boolean CheckIfQuestionExists(String question_text) {
+				// TODO Auto-generated method stub
+				return false;
+			}
 		};
 		QuestionController testedStub = new QuestionController(repoStub);
 		;
@@ -86,7 +91,7 @@ public class QuestionControllerTest {
 
 	@Test
 	public void testCreate() {
-		testQuestionControllerMock.create("questiontext", 1, "answer1", "A2",
+		testQuestionControllerMock.InsertQuestion("questiontext", 1, "answer1", "A2",
 				"A3", "A4", 2);
 		Mockito.verify(testQuestionRepositoryMock).insert(
 				Mockito.argThat(new ArgumentMatcher<Question>() {

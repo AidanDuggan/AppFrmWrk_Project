@@ -69,6 +69,19 @@ public class QuestionRepositoryJdbc implements QuestionRepository {
 				new QuestionRowMapper());
 	}
 
+	public boolean CheckIfQuestionExists(String question_text) {
+		if (jdbcTemplate.queryForObject(
+				"select question_id where questiontext=?",
+				new QuestionRowMapper(), question_text) == null)
+				{
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+	}
+
 }
 
 class QuestionRowMapper implements RowMapper<Question> {
